@@ -6,6 +6,30 @@ Backend da aplicação **Lumen**, uma API RESTful construída com [NestJS](https
 
 Lumen é uma aplicação que gerencia **salas (rooms)**, **usuários**, **convites**, **fotos** e **armazenamento de arquivos**. A API oferece autenticação, gerenciamento de membros de salas e upload de fotos.
 
+## 🛠️ Tecnologias
+
+<div align="center">
+
+<img src="https://nestjs.com/img/logo-small.svg" alt="NestJS" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/prisma/presskit/main/Assets/Prisma-DarkSymbol.svg" alt="Prisma" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/eslint/eslint-original.svg" alt="ESLint" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/prettier/prettier/main/website/static/icon.png" alt="Prettier" width="80" height="80" />
+
+</div>
+
+<br>
+
+| Tecnologia | Descrição |
+|:---:|---|
+| ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white) | Framework Node.js para aplicações server-side |
+| ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white) | ORM para banco de dados |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) | Superset tipado do JavaScript |
+| ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) | Runtime JavaScript |
+| ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white) | Linting de código |
+| ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black) | Formatação de código |
+
 ## 🏗️ Arquitetura
 
 O projeto segue a arquitetura modular do NestJS:
@@ -30,13 +54,6 @@ src/
 ├── app.service.ts       # Service raiz
 └── main.ts              # Ponto de entrada da aplicação
 ```
-
-## 🛠️ Tecnologias
-
-- **[NestJS](https://nestjs.com/)** — Framework Node.js para aplicações server-side
-- **[Prisma](https://www.prisma.io/)** — ORM para banco de dados
-- **[TypeScript](https://www.typescriptlang.org/)** — Superset tipado do JavaScript
-- **[ESLint](https://eslint.org/)** & **[Prettier](https://prettier.io/)** — Linting e formatação de código
 
 ## 🚀 Primeiros Passos
 
@@ -63,7 +80,7 @@ src/
 
 3. **Configure as variáveis de ambiente:**
 
-   Crie um arquivo `.env` na raiz do projeto com as variáveis necessárias (use o `.env` existente como referência):
+   Crie um arquivo `.env` na raiz do projeto com as variáveis necessárias:
 
    ```env
    DATABASE_URL="sua-connection-string"
