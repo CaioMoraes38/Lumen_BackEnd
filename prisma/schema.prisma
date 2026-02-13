@@ -1,0 +1,93 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../src/generated/prisma"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model invites {
+  id        String       @id @default(uuid())
+  code      String       @unique
+  status    InviteStatus @default(PENDING)
+  expiresAt DateTime
+  roomId    String
+  inviterId String
+  createdAt DateTime     @default(now())
+  users     users        @relation(fields: [inviterId], references: [id])
+  rooms     rooms        @relation(fields: [roomId], references: [id], onDelete: Cascade)
+
+  @@index([code])
+}
+
+model photos {
+  id          String    @id @default(uuid())
+  url         String
+  storagePath String
+  width       Int
+  height      Int
+  size        Int
+  createdAt   DateTime @default(now())
+  roomId      String
+  uploaderId  String
+  rooms       rooms    @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  users       users    @relation(fields: [uploaderId], references: [id])
+
+  @@index([roomId])
+}
+
+model room_members {
+  id       String   @id @default(uuid())
+  role     Role     @default(MEMBER)
+  joinedAt DateTime @default(now())
+  userId   String
+  roomId   String
+  rooms    rooms    @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  users    users    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, roomId])
+  @@index([roomId])
+  @@index([userId])
+}
+
+model rooms {
+  id           String         @id @default(uuid())
+  name         String
+  description  String?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime       @updatedAt
+  coverUrl     String?
+  invites      invites[]
+  photos       photos[]
+  room_members room_members[]
+}
+
+model users {
+  id           String         @id @default(uuid())
+  email        String         @unique
+  name         String
+  age          Int
+  avatarUrl    String?
+  createdAt    DateTime       @default(now())
+  updatedAt    DateTime
+  password     String
+  refreshToken String?
+  invites      invites[]
+  photos       photos[]
+  room_members room_members[]
+}
+
+enum InviteStatus {
+  PENDING
+  USED
+  EXPIRED
+}
+
+enum Role {
+  OWNER
+  MEMBER
+  VIEWER
+  ADMIN
+}
