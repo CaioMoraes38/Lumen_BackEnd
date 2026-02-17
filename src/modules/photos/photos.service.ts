@@ -44,21 +44,3 @@ export class PhotosService {
 }
 };
 
-
-/*
-  model photos {
-  id          String    @id @default(uuid())
-  url         String
-  storagePath String
-  width       Int
-  height      Int
-  size        Int
-  createdAt   DateTime @default(now())
-  roomId      String
-  uploaderId  String
-  rooms       rooms    @relation(fields: [roomId], references: [id], onDelete: Cascade)
-  users       users    @relation(fields: [uploaderId], references: [id])
-
-  @@index([roomId])
-}
- */

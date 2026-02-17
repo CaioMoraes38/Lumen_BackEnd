@@ -22,7 +22,8 @@ export class RoomsMemberService {
         throw error;
     }
 }
-    async findAll() {        return await this.prisma.room_members.findMany();
+    async findAll() { 
+        return await this.prisma.room_members.findMany();
     }
     async update(id: string, updateRoomMemberDto: UpdateRoomMemberDto) {
         return await this.prisma.room_members.update({
@@ -32,4 +33,6 @@ export class RoomsMemberService {
             }
         });
     }
+   
+
 }

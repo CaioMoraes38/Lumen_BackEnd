@@ -21,17 +21,3 @@ export class CreateRoomMemberDto {
 }
 
 
-/*
-model room_members {
-  id       String   @id @default(uuid())
-  role     Role     @default(MEMBER)
-  joinedAt DateTime @default(now())
-  userId   String
-  roomId   String
-  rooms    rooms    @relation(fields: [roomId], references: [id], onDelete: Cascade)
-  users    users    @relation(fields: [userId], references: [id], onDelete: Cascade)
-
-  @@unique([userId, roomId])
-  @@index([roomId])
-  @@index([userId])
-} */

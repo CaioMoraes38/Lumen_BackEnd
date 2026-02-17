@@ -15,18 +15,3 @@ export class CreateInviteDto {
 
 
 
-/**
- * model invites {
-  id        String       @id @default(uuid())
-  code      String       @unique
-  status    InviteStatus @default(PENDING)
-  expiresAt DateTime
-  roomId    String
-  inviterId String
-  createdAt DateTime     @default(now())
-  users     users        @relation(fields: [inviterId], references: [id])
-  rooms     rooms        @relation(fields: [roomId], references: [id], onDelete: Cascade)
-
-  @@index([code])
-}
- */

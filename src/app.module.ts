@@ -14,7 +14,9 @@ import { StorageModule } from './modules/storage/stora.module';
   imports: [
     ConfigModule.forRoot({
       isGlobal: true,
-    }),AuthModule, RoomsModule, PhotosModule, RoomsMemberModule, InvitesModule, UsersModule, StorageModule],
+    }),AuthModule, RoomsModule, PhotosModule, 
+    RoomsMemberModule, InvitesModule, UsersModule, 
+    StorageModule],
   controllers: [],
   providers: [],
 })

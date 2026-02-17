@@ -7,10 +7,10 @@ export class RegisterController {
   constructor(private readonly registerService: RegisterService) {}
 
   @Post()
-  @UseInterceptors(FileInterceptor('file')) // 1. Intercepta o campo 'file'
+  @UseInterceptors(FileInterceptor('file')) 
   async create(
     @Body() body: { name: string; email: string; age: string; password: string },
-    @UploadedFile() file: Express.Multer.File // 2. Recebe o arquivo (pode ser undefined)
+    @UploadedFile() file: Express.Multer.File 
   ) {
     const data = {
       ...body,
