@@ -7,7 +7,7 @@ COPY package*.json ./
 RUN npm ci
 
 COPY . .
-RUN npm run build && echo "=== Build OK ===" && ls dist/ || (echo "=== Build FAILED ===" && exit 1)
+RUN npx prisma generate && npm run build && echo "=== Build OK ===" && ls dist/ || (echo "=== Build FAILED ===" && exit 1)
 
 # ─── Stage 2: Production ───────────────────────────────────────────────────────
 FROM node:22-alpine AS production
@@ -25,4 +25,4 @@ COPY --from=builder /app/src/generated ./src/generated
 
 EXPOSE 3000
 
-CMD ["node", "dist/src/main"]
+CMD ["node", "dist/main"]
