@@ -2,24 +2,26 @@ import { Injectable, NotFoundException, ForbiddenException } from '@nestjs/commo
 import { PrismaService } from 'src/database/prisma/prisma.service';
 import { CreateRoomDtos } from "./dto/createRoomsDtos";
 import { StorageService } from '../storage/storage.service';
+import { AppGateway } from 'src/utils/gateway/app.gateway';
 
 @Injectable()
 export class RoomsService {
     constructor(
         private readonly prisma: PrismaService,
-        private readonly storageService: StorageService
+        private readonly storageService: StorageService,
+        private readonly gateway: AppGateway
     ) { }
 
-    async createRoom(roomDto: CreateRoomDtos, userId: string, file?: Express.Multer.File) {
+  async createRoom(roomDto: CreateRoomDtos, userId: string, file?: Express.Multer.File) {
 
-        let urlCapa = null;
+        let urlCapa: string | null = null;
 
         if (file) {
             const { url } = await this.storageService.uploadFile(file, 'covers');
-            let urlCapa = url;
+            urlCapa = url; 
         }
 
-        return this.prisma.rooms.create({
+        const newRoom = await this.prisma.rooms.create({
             data: {
                 name: roomDto.name,
                 description: roomDto.description,
@@ -33,12 +35,19 @@ export class RoomsService {
                 }
             },
             include: {
-                room_members: true
+                room_members: true,
+                _count: { 
+                    select: { room_members: true, photos: true }
+                }
             }
         });
+
+        this.gateway.server.emit('nova_sala', newRoom);
+
+        return newRoom;
     }
 
-    async getMyRooms(userId: string) {
+   async getMyRooms(userId: string) {
         return this.prisma.rooms.findMany({
             where: {
                 room_members: {
@@ -48,7 +57,15 @@ export class RoomsService {
                 }
             },
             include: {
-                room_members: true,
+                room_members: {
+                    include: {
+                        users: {
+                            select: {
+                                avatarUrl: true 
+                            }
+                        }
+                    }
+                },
                 _count: {
                     select: {
                         room_members: true,
@@ -82,5 +99,6 @@ export class RoomsService {
 
         return { message: "Sala deletada com sucesso!" };
     }
+
 
 }

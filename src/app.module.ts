@@ -7,6 +7,7 @@ import { InvitesModule } from './modules/invites/invites.module';
 import { UsersModule } from './modules/user/user.module';
 import { ConfigModule } from '@nestjs/config';
 import { StorageModule } from './modules/storage/stora.module';
+import { AppGateway } from './utils/gateway/app.gateway';
  
 
 
@@ -18,6 +19,6 @@ import { StorageModule } from './modules/storage/stora.module';
     RoomsMemberModule, InvitesModule, UsersModule, 
     StorageModule],
   controllers: [],
-  providers: [],
+  providers: [AppGateway],
 })
 export class AppModule {}

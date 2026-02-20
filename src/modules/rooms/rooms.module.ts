@@ -3,10 +3,12 @@ import { RoomsController } from './rooms.controller';
 import { RoomsService } from './rooms.service';
 import { PrismaService } from '../../database/prisma/prisma.service';
 import { StorageModule } from '../storage/stora.module'; 
+import { GatewayModule } from 'src/utils/gateway/gateway.module';
 
 @Module({
   imports: [
-    StorageModule 
+    StorageModule,
+    GatewayModule
   ],
   controllers: [RoomsController],
   providers: [

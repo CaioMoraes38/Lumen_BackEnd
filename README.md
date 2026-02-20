@@ -14,6 +14,9 @@ Lumen é uma aplicação que gerencia **salas (rooms)**, **usuários**, **convit
 <img src="https://raw.githubusercontent.com/prisma/presskit/main/Assets/Prisma-DarkSymbol.svg" alt="Prisma" width="80" height="80" />
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="TypeScript" width="80" height="80" />
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original.svg" alt="Node.js" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original.svg" alt="PostgreSQL" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original.svg" alt="Docker" width="80" height="80" />
+<img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/jest/jest-plain.svg" alt="Jest" width="80" height="80" />
 <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/eslint/eslint-original.svg" alt="ESLint" width="80" height="80" />
 <img src="https://raw.githubusercontent.com/prettier/prettier/main/website/static/icon.png" alt="Prettier" width="80" height="80" />
 
@@ -21,14 +24,57 @@ Lumen é uma aplicação que gerencia **salas (rooms)**, **usuários**, **convit
 
 <br>
 
-| Tecnologia | Descrição |
-|:---:|---|
-| ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white) | Framework Node.js para aplicações server-side |
-| ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white) | ORM para banco de dados |
-| ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) | Superset tipado do JavaScript |
-| ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) | Runtime JavaScript |
-| ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white) | Linting de código |
-| ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black) | Formatação de código |
+### 🔧 Core
+
+| Tecnologia | Versão | Descrição |
+|:---:|:---:|---|
+| ![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white) | ^11.0.1 | Framework Node.js para aplicações server-side |
+| ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) | ^5.7.3 | Superset tipado do JavaScript |
+| ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white) | LTS | Runtime JavaScript |
+| ![RxJS](https://img.shields.io/badge/RxJS-B7178C?style=for-the-badge&logo=reactivex&logoColor=white) | ^7.8.1 | Programação reativa e assíncrona |
+
+### 🗄️ Banco de Dados & ORM
+
+| Tecnologia | Versão | Descrição |
+|:---:|:---:|---|
+| ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white) | - | Banco de dados relacional |
+| ![Prisma](https://img.shields.io/badge/Prisma-2D3748?style=for-the-badge&logo=prisma&logoColor=white) | ^7.3.0 | ORM para banco de dados |
+| ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) | ^2.95.3 | Backend as a Service (PostgreSQL + Storage) |
+
+### 🔐 Autenticação & Segurança
+
+| Tecnologia | Versão | Descrição |
+|:---:|:---:|---|
+| ![JWT](https://img.shields.io/badge/JWT-000000?style=for-the-badge&logo=jsonwebtokens&logoColor=white) | ^11.0.2 | Autenticação via JSON Web Tokens |
+| ![Passport](https://img.shields.io/badge/Passport-34E27A?style=for-the-badge&logo=passport&logoColor=white) | ^0.7.0 | Middleware de autenticação (estratégia JWT) |
+| ![Bcrypt](https://img.shields.io/badge/Bcrypt-525252?style=for-the-badge&logo=letsencrypt&logoColor=white) | ^6.0.0 | Hash seguro de senhas |
+
+### 🌐 Comunicação em Tempo Real
+
+| Tecnologia | Versão | Descrição |
+|:---:|:---:|---|
+| ![Socket.io](https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=socketdotio&logoColor=white) | ^4.8.3 | WebSockets para comunicação em tempo real |
+
+### ✅ Validação & Transformação
+
+| Tecnologia | Versão | Descrição |
+|:---:|:---:|---|
+| ![class-validator](https://img.shields.io/badge/class--validator-007396?style=for-the-badge&logo=npm&logoColor=white) | ^0.14.3 | Validação declarativa de DTOs |
+| ![class-transformer](https://img.shields.io/badge/class--transformer-007396?style=for-the-badge&logo=npm&logoColor=white) | ^0.5.1 | Transformação e serialização de objetos |
+
+### 🐳 Infraestrutura & DevOps
+
+| Tecnologia | Versão | Descrição |
+|:---:|:---:|---|
+| ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) | - | Containerização da aplicação |
+
+### 🧪 Testes & Qualidade de Código
+
+| Tecnologia | Versão | Descrição |
+|:---:|:---:|---|
+| ![Jest](https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=jest&logoColor=white) | ^30.0.0 | Framework de testes unitários e e2e |
+| ![ESLint](https://img.shields.io/badge/ESLint-4B32C3?style=for-the-badge&logo=eslint&logoColor=white) | ^9.18.0 | Linting de código |
+| ![Prettier](https://img.shields.io/badge/Prettier-F7B93E?style=for-the-badge&logo=prettier&logoColor=black) | ^3.4.2 | Formatação de código |
 
 ## 🏗️ Arquitetura
 
@@ -61,7 +107,8 @@ src/
 
 - [Node.js](https://nodejs.org/) (versão LTS recomendada)
 - [npm](https://www.npmjs.com/) ou [yarn](https://yarnpkg.com/)
-- Banco de dados compatível com Prisma (PostgreSQL, MySQL, etc.)
+- [Docker](https://www.docker.com/) (opcional, para rodar via container)
+- Conta no [Supabase](https://supabase.com/) (banco de dados PostgreSQL + storage)
 
 ### Instalação
 
@@ -83,7 +130,10 @@ src/
    Crie um arquivo `.env` na raiz do projeto com as variáveis necessárias:
 
    ```env
-   DATABASE_URL="sua-connection-string"
+   DATABASE_URL="sua-connection-string-postgresql"
+   JWT_SECRET="seu-segredo-jwt"
+   SUPABASE_URL="https://seu-projeto.supabase.co"
+   SUPABASE_KEY="sua-chave-supabase"
    ```
 
 4. **Execute as migrations do banco de dados:**
@@ -109,6 +159,16 @@ npm run start:dev
 
 # modo produção
 npm run start:prod
+```
+
+### Executando com Docker
+
+```bash
+# build e start do container
+docker compose up --build
+
+# rodar em background
+docker compose up -d
 ```
 
 ## 🧪 Testes

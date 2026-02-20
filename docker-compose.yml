@@ -1,0 +1,18 @@
+services:
+  # ── NestJS API ──────────────────────────────────────────────────────────────
+  # O banco de dados é o Supabase (remoto) — não há container local de PostgreSQL.
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: lumen_api
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: $DATABASE_URL
+      JWT_SECRET: $JWT_SECRET
+      SUPABASE_URL: $SUPABASE_URL
+      SUPABASE_KEY: $SUPABASE_KEY
+    ports:
+      - "3000:3000"
